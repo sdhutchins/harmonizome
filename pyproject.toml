@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "harmonizome"
+version = "1.0.0"
+description = "Python client for the Harmonizome API - a resource for exploring gene sets and their attributes"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Shaurita D. Hutchins", email = "shaurita.d.hutchins@gmail.com"}
+]
+maintainers = [
+    {name = "Shaurita D. Hutchins", email = "shaurita.d.hutchins@gmail.com"}
+]
+keywords = ["bioinformatics", "genomics", "gene-sets", "harmonizome", "api-client"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "numpy>=1.19.0",
+    "pandas>=1.3.0",
+    "scipy>=1.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "isort>=5.0",
+    "flake8>=3.8",
+]
+
+[project.urls]
+Homepage = "https://maayanlab.cloud/Harmonizome/"
+Documentation = "https://maayanlab.cloud/Harmonizome/"
+Repository = "https://github.com/sdhutchins/harmonizome"
+"Bug Tracker" = "https://github.com/sdhutchins/harmonizome/issues"
+
+[tool.setuptools]
+py-modules = ["harmonizome"]
+
+[project.scripts]
+harmonizome = "harmonizome.harmonizome_cli:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+known_first_party = ["harmonizome"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=harmonizome",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+] 
