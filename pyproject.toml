@@ -50,8 +50,8 @@ Documentation = "https://maayanlab.cloud/Harmonizome/"
 Repository = "https://github.com/sdhutchins/harmonizome"
 "Bug Tracker" = "https://github.com/sdhutchins/harmonizome/issues"
 
-[tool.setuptools]
-py-modules = ["harmonizome"]
+[tool.setuptools.packages.find]
+include = ["harmonizome*"]
 
 [project.scripts]
 harmonizome = "harmonizome.harmonizome_cli:main"
