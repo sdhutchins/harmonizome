@@ -173,7 +173,7 @@ The following file types are available for download:
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - numpy >= 1.19.0
 - pandas >= 1.3.0
 - scipy >= 1.7.0
@@ -196,7 +196,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 If you use this package in your research, please cite:
 
-```
+```txt
 Rouillard AD, Gundersen GW, Fernandez NF, Wang Z, Monteiro CD, McDermott MG, Ma'ayan A. The harmonizome: a collection of processed datasets gathered to serve and mine knowledge about genes and proteins. Database (Oxford). 2016 Jul 3;2016:baw100. doi: 10.1093/database/baw100.
 ```
 
