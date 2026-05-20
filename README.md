@@ -173,7 +173,7 @@ The following file types are available for download:
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.9+
 - numpy >= 1.19.0
 - pandas >= 1.3.0
 - scipy >= 1.7.0
